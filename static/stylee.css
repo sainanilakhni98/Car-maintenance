@@ -1,0 +1,26 @@
+body {
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+   -o-background-size: cover;
+
+  }
+
+.dbox{
+  border: 5px solid blue;
+  width: 200px;
+  height: 200px;
+}
+.color{
+  background-color: blueviolet;
+}
+.inner{
+  overflow: hidden;
+}
+.inner:hover img{
+  transition: all 1.2s ease;
+    transform: scale(1.1);
+}
+

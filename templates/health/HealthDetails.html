@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'node_modules/bootstrap/dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'node_modules/bootstrap/dist/css/bootstrap.css'%}">
+    <link rel="stylesheet" href="{% static 'node_modules/font-awesome/css/font-awesome.min.css'%}">
+    <link rel="stylesheet" href="{% static 'node_modules/bootstrap-social/bootstrap-social.css'%}">
+    <link rel="stylesheet" href="{% static 'stylee.css' %}">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+
+    <title>{{allProds.company}}</title>
+</head>
+
+<body class="body">
+
+    <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+        <div class="container">
+
+            <a class="navbar-brand" href="#">Restorante con fusion</a>
+
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#Navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="Navbar">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="/"><span class="fa fa-home"></span> Home</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="/cars/"><span class="fa fa-info"></span>
+                            Brands</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-home fa-lg"></span>Menu</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-address-card fa-lg"></span>
+                            Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="jumbotron">
+        <div class="container">
+            <div class="row row-header">
+                <div class="col-12 col-sm-6">
+                    <h1>Car Maintenance Index</h1>
+                    <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our
+                        lipsmacking creations will tickle your culinary senses!</p>
+                </div>
+                <div class="col-12 col-sm">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container heigh">
+        {% for product in allProds %}
+        <div class="row shadow bg-white rounded">
+            <div class=" col-sm-5 text-center">
+                <img title="Maruti 800" src="{{ product.link }}"
+                    class="img-fluid">
+            </div>
+            <div class="col-sm-6 text-center">
+                <br>
+                <button class="btn " style="font-style: Arial;">
+                    <h3>{{ product.model }}</h3>
+                </button>
+                <h6 class="text-center card-text" style="font-style:Arial">{{ product.price }} Lakhs</h6>
+                <h6 class="text-center card-text" style="font-style:Arial; color: grey;">{{ product.Engine }} cc
+                    {{product.mileage}}kmpl petrol/desel</h6>
+                <br>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-4  col-sm-2">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Menu</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-7 offset-1 col-sm-5">
+                    <h5>Our Address</h5>
+                    <address>
+                        121, Clear Water Bay Road<br>
+                        Clear Water Bay, Kowloon<br>
+                        HONG KONG<br>
+                        <i class="fa fa-phone"></i>:+852 1234 5678<br>
+                        <i class="fa fa-fax"></i>: +852 8765 4321<br>
+                        <i class="fa fa-envelope"></i>: <a href="mailto:confusion@food.net">confusion@food.net</a>
+                    </address>
+                </div>
+                <div class="col-12 col-sm-4 align-self-center">
+                    <div class="text-center">
+                        <a class="btn btn-social-icon btn-google" href="http://google.com/+"><i
+                                class="fa fa-google-plus fa-lg"></i></a>
+                        <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i
+                                class="fa fa-facebook fa-lg"></i></a>
+                        <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i
+                                class="fa fa-linkedin fa-lg"></i></a>
+                        <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i
+                                class="fa fa-twitter fa-lg"></i></a>
+                        <a class="btn btn-social-icon btn-google" href="http://youtube.com/"><i
+                                class="fa fa-youtube fa-lg"></i></a>
+                        <a class="btn btn-social-icon " href="mailto:"><i class="fa fa-envelope-o fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-auto">
+                    <p>© Copyright 2018 Ristorante Con Fusion</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+</body class="body">
+
+</html>

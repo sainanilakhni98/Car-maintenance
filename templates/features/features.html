@@ -1,0 +1,246 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Required meta tags always come first -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+{% load static %}
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="{% static 'node_modules/bootstrap/dist/css/bootstrap.min.css' %} ">
+<link rel="stylesheet" href="{% static 'node_modules/font-awesome/css/font-awesome.min.css' %}">
+<link rel="stylesheet" href="{% static 'node_modules/bootstrap-social/bootstrap-social.css' %}">
+<link rel="stylesheet" href="{% static 'styles.css' %}">
+<link rel="stylesheet" href="{% static 'stylefeature.css'%}">
+  <title>Reliabilty Index</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+    <div class="container">
+    
+        
+        
+        <a class="navbar-brand" href="/">Reliabilty Index</a>
+        
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#Navbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="Navbar">
+            <ul class="navbar-nav ml-auto">
+              
+            <li class="nav-item active"><a class="nav-link" href="/"><span class="fa fa-home"></span> Home</a></li>
+            
+            <li class="nav-item"><a class="nav-link" href="/cars/"><span class=""></span>Brands</a></li>
+            <li class="nav-item"><a class="nav-link" href="/about/"><span class="">About</span></a></li>
+            <form  method="GET" action="/cars/search/" class="form-inline my-2 my-lg-0 ml-1" >
+              <input class="form-control ml-sm-2" type="search" name="query" placeholder="Search" aria-label="Search" style="width: 60%; height: 70%;">
+              <button class="border-0 bg-transparent p-2" type="submit">
+                <i class="fa fa-search fa-lg pointer" style="color: white;">search</i>
+              </button>
+            </form>
+        </ul>
+    </div>
+   </div>
+</nav>
+
+    <header class="jumbotron jew text-center">
+        <form action="/features/maintenance/" method="POST">
+            {% csrf_token %}
+            <div class="container">
+                <div class="row row-header justify-content-center">
+                    <div class="col-12 col-sm-12">
+                        <h3>Select Car Features</h3>
+                        <p>Adjust Car Features according to your needs and choices to see the best cars in terms of
+                            Price
+                            ,Mileage ,Maintenance Cost,Engine Quality and Seating Capacity </p>
+                    </div>
+                    <div class="col-12 col-sm">
+                    </div>
+                </div>
+            </div>
+    </header>
+    {% if error %}
+        <h1 style="color: darkred;">{{ error }}</h1>
+    {% endif %}
+    <div class="container">
+        
+        <div class="row row-content align-items-center justify-content-center">
+
+            <div class="col-md-6 col-lg-5">
+                <div class="card justify-content-center" style="width:auto;">
+                    <h3 class="card-header bg-primary text-white text-center hello "> Car Price</h3>
+                    <div class="card-body text-center justify-content-center">
+                        <img class="image-responsive img-fluid " src="{% static 'images/Price.jpg' %}">
+                        <div class="text-center justify-content-center">
+                            <div class="input-group text-center justify-content-center">
+                                <input type="text" name=price1 class="input-control  text-center"
+                                    placeholder="starting Range"
+                                    style="border-color: blueviolet;  border-width: 1px; margin-top: 20px; color: black;">
+                                <input type="text" name=price2 class="input-control  text-center"
+                                    placeholder="Ending Range"
+                                    style="border-color: blueviolet;  border-width: 1px; margin-top: 20px; color: black;">
+                            </div>
+                        </div>
+                    </div>
+                    <!--
+                    <div class="text-center">
+                        <div class="btn-group" role="group">
+                            <a role="button" class="btn btn-primary" href="aboutus.html">Choose</a>
+                        </div>
+                      </div>-->
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-5 ml-auto mt-sm-4 mt-md-0">
+                <div class="card" style="border:1px solid black;">
+                    <h3 class="card-header bg-primary text-white text-center hello">Car Maintenance</h3>
+                    <div class="card-body text-center" style="">
+                        <img class="image-responsive img-fluid" src="{% static 'images/Maintenance.jpg' %}">
+                        <div class="input select p1"><select name="mcost" style="margin: 0px; border-color: red;"
+                                class="text-white-50">
+                                <option value="2600-8320">Any</option>
+                                <option selected value="2600-3600">2600-3600</option>
+                                <option value="3600-4600">3600-4600</option>
+                                <option value="4600-5600">4600-5600</option>
+                                <option value="5600-6600">5600-6600</option>
+                                <option value="6600-7600">6600-7600</option>
+                                <option value="7600-8600">7600-8600</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <!--
+              <div class="text-center">
+                <div class="btn-group" role="group">
+                    <a role="button" class="btn btn-primary" href="aboutus.html">Choose</a>
+                </div>
+              </div> -->
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-5 mt-4">
+                <div class="card" style="border:1px solid black;">
+                    <h3 class="card-header bg-primary text-white text-center hello">Car Mileage</h3>
+                    <div class="card-body text-center" style="">
+                        <img class="image-responsive img-fluid" src="{% static 'images/Mileage.jpg' %}">
+                        <div class="input select p1"><select name="Mileage" style=" margin: 0px; border-color: red;"
+                                class="text-white-50">
+                                <!--<option value="">Maintenance</option>-->
+                                <option selected value="10-28">Any</option>
+                                <option value="10-15">10-15</option>
+                                <option value="15-20">15-20</option>
+                                <option value="25-30">25-30</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <!--
+              <div class="text-center">
+                <div class="btn-group" role="group">
+                    <a role="button" class="btn btn-primary" href="aboutus.html">Choose</a>
+                </div>
+              </div> -->
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-5 mt-4 ml-auto">
+                <div class="card" style="border:1px solid black;">
+                    <h3 class="card-header bg-primary text-white text-center hello">Car Mileage</h3>
+                    <div class="card-body text-center" style="">
+                        <img class="image-responsive img-fluid" src="{% static 'images/Engine.jpg' %}">
+                        <div class="input select p1"><select name="engine" style=" margin: 0px; border-color: red;"
+                                class="text-white-50">
+                                <option selected value="700-4700">Any</option>
+                                <option value="700-1700">700-1700</option>
+                                <option value="1700-2700">1700-2700</option>
+                                <option value="2700-3700">2700-3700</option>
+                                <option value="3700-4700">3700-4700</option>
+
+                            </select>
+                        </div>
+
+                    </div>
+                    
+              
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-5 mt-4">
+                <div class="card" style="border:1px solid black;">
+                    <h3 class="card-header bg-primary text-white text-center hello">Seating Capacity</h3>
+                    <div class="card-body text-center" style="">
+                        <img class="image-responsive img-fluid" src="{% static 'images/Seating Capacity.jpg' %}">
+                        <div class="input select p1"><select name="seat_capacity"
+                                style=" margin: 0px; border-color: red;" class="text-white-50">
+                                <option selected value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    
+              
+                </div>
+            </div>
+
+
+        </div>
+        <div class="text-center justify-content-center">
+            <button class="btn btn-primary mb-5" style="margin-top: 20px; ">
+                Submit
+            </button>
+        </div>
+        </form>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">             
+                <div class="col-4  col-sm-2">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="/cars/">Brands</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="col-7 offset-1 col-sm-5">
+                    <h5>Our Address</h5>
+                    <address>
+		              121, Clear Water Bay Road<br>
+		              Clear Water Bay, Kowloon<br>
+		              HONG KONG<br>
+		              <i class="fa fa-phone"></i>:+852 1234 5678<br>
+		              <i class="fa fa-fax"></i>: +852 8765 4321<br>
+		              <i class="fa fa-envelope"></i>: <a href="mailto:confusion@food.net">confusion@food.net</a>
+		           </address>
+                </div>
+                <div class="col-12 col-sm-4 align-self-center">
+                    <div class="text-center">
+                        <a class="btn btn-social-icon btn-google" href="http://google.com/+"><i class="fa fa-google-plus fa-lg"></i></a>
+                        <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i class="fa fa-facebook fa-lg"></i></a>
+                        <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i class="fa fa-linkedin fa-lg"></i></a>
+                        <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter fa-lg"></i></a>
+                        <a class="btn btn-social-icon btn-google" href="http://youtube.com/"><i class="fa fa-youtube fa-lg"></i></a>
+                        <a class="btn btn-social-icon " href="mailto:"><i class="fa fa-envelope-o fa-lg"></i></a>
+                    </div>
+                </div>
+           </div>
+        </div>
+    </footer>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+    <script src="{% static 'node_modules/jquery/dist/jquery.slim.min.js' %}"></script>
+    <script src="{% static 'node_modules/popper.js/dist/umd/popper.min.js' %}"></script>
+    <script src="{% static 'node_modules/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+
+</body class="body">
+
+</html>

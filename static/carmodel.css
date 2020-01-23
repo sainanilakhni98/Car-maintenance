@@ -1,0 +1,22 @@
+body {
+    margin-top:20px;
+    background-image: url(https://www.dhresource.com/0x0/f2/albu/g6/M00/10/B1/rBVaR1s84YKAXuCSAAWrPCQc0Ik585.jpg);
+      background-attachment: fixed;
+      background-position-y:10% ;
+     background-repeat: no-repeat;
+     background-size: 80%;
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+      -o-background-size: cover;
+  
+     }
+  
+  
+.bg3{
+  color: black;
+  width: 200px;
+}
+  .heigh{
+    height: 50px;
+    width: 750px;
+  }
